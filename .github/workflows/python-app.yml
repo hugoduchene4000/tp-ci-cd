@@ -28,8 +28,10 @@ jobs:
     - name: Ejecutar tests
       run: |
         python -m unittest discover tests
+      env:
+        PYTHONPATH: ${{ github.workspace }}
 
     - name: Ejecutar pylint
       run: |
         pip install pylint
-        pylint math/ tests/
+        pylint my_math/ tests/
